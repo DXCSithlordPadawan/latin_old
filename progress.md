@@ -3,7 +3,32 @@
 **Project:** Air-Gapped Adaptive Latin Translation & Pedagogical System  
 **Author:** Iain Reid  
 **Status:** Phase 1–6 Complete; Phase 7 Compliance Gate Pending  
-**Last Updated:** 2026-06-08
+**Last Updated:** 2026-11-20
+
+---
+
+## Documentation and Standards Pass — 2026-11-20
+
+| Item | State |
+|---|---|
+| Documents DOC-01 to DOC-15, standards matrix, component register and 12 component docs under `.airgap-translator/docs/` | Written as Draft 2.0 from the PRD and code; 1.0.0 set moved to `docs/archive-v1/` |
+| Five supporting docs kept; headers standardised; checklist auditd paths and backup retention corrected | Done |
+| PRD 1.1.0: requirement IDs (76), standards mapping, gap list G-01 to G-14, doc suite list | Done |
+| BRD set and tube map in `.airgap-translator/brd/` (7 BV, 13 personas, 14 epics, 47 features, 94 tasks) | Generated; 5 asserts pass |
+| Unit tests re-run (Python 3.12.9, Windows) | 176 passed, 1 deselected, 0 failed |
+| Knowledge graph and labels | Updated, see the build record in the session notes |
+
+### Stage 0 (started 2026-11-20)
+
+| Feature | State |
+|---|---|
+| FEAT-03 gap reproduction tests | `tests/test_gaps_stage0.py`: 10 strict-xfail tests for G-01, G-02, G-03 (x3), G-04, G-05, G-07, G-08, G-11. Suite: 176 passed, 10 xfailed. Not yet covered: G-06, G-09, G-12 |
+| FEAT-01 run-line spike | Plan in `docs/spike-run-line.md`. **Not run**: no Podman, Docker or WSL distribution on this machine; needs a Linux host |
+| FEAT-02 decisions OD-S1 to S3 | Waiting on the project owner |
+
+When a gap is fixed its test XPASSes and strict mode fails the run; remove the marker in the same change.
+
+Not done: no gap fixed in code; no container built; no quality-gate run; no document reviewed by an owner; Mermaid not rendered; all controls Planned (none Evidenced). Next step is BRD Stage 0: prove the run line (G-10) and write failing tests for G-01 to G-12.
 
 ---
 
